@@ -1,0 +1,236 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+<style>
+    .menu{
+        margin-top: 2em;
+        text-indent: 2em;
+    }
+    .bt{
+        margin-top: 4em;
+        float: right;
+        margin-inline-end: 27em;
+        text-indent: 2em;
+    }
+</style>
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 50px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left;"></span>
+        <span class="mx-auto d-block" style="float: left">회원가입</span>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px">
+    <div class="col-sm-12 mx-auto d-block" style="float: left; margin: 10px">
+        <form class="form-inline my-2 my-lg-0 float-md-left">
+            <!--div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <span class="" style="font-size: 25px; color: #34a853;">신규가입 </span>
+                    </div>
+                </div>
+            </div-->
+        </form>
+    </div> 
+    
+    <div class="body">
+        <script language="javascript">
+            //ENTER 안먹게 하는것
+            function captureReturnKey(e) {
+                if(e.keyCode==13 && e.srcElement.type != 'textarea')
+                return false;
+            }
+        </script>
+
+        <form name="join" onsubmit="return success()" action="/auth/join" accept-charset="utf-8" method="post" onkeydown="return captureReturnKey(event)">
+            <div class="menu">
+                <div class="row">
+                    <!--아이디-->
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">이메일(ID)</label>
+                    <div class="col-sm-6">
+                        <input type="email" name="Email" class="form-control" placeholder="" id="Email">
+                    </div>
+                    <div class="button">
+                        <!--중복확인 버튼-->
+                        <div id="result"></div>
+                        <button type="button" class="btn btn-success" onclick='idoverlap()'>중복확인</button>
+                        <!--이 부분 라벨 대체 왜 뺀건지 물어보고, idoverlap 함수 기능 구현은 어디갔는지 물어보기-->
+                    </div>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <div class="row">
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">비밀번호</label>
+                    <div class="col-sm-6">
+                        <input type="password" name="PW" class="form-control" placeholder="" id="PW">
+                    </div>
+                    <div>
+                        <!--label for="username" class="col-sm-2 control label" style="font-size: 20px;">비밀번호</label-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="row">
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">비밀번호 확인</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="password" id="RePW" placeholder="중복확인" onblur='passwordoverlap()'>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="menu">
+                <div class="row">
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">직급</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="EmployeeNum" class="form-control" id="EmployeeNum" maxlength="8" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            <!--부서 추가 완료!!-->
+            <div class="menu">
+                <div class="row">
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">부서</label>
+                    <div class="col-sm-6" style="margin-left: -2em;">
+                        <select name="Department" id="Department" style="width: 100px; height: 30px; font-size: medium;">
+                            <option style="font-size: medium;" value="관리부">관리부</option>
+                            <option style="font-size: medium;" value="재경부">재경부</option>
+                            <option style="font-size: medium;" value="마케팅부">마케팅부</option>
+                            <option style="font-size: medium;" value="무역부">무역부</option>
+                            <option style="font-size: medium;" value="물류부">물류부</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <div class="row">
+                    <!--이름-->
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">이름</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="Name" class="form-control" id="Name" placeholder="">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <div class="row">
+                    <label for="username" class="col-sm-2 control label" style="font-size: 20px;">핸드폰번호</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="HP" class="form-control" id="Hp" onkeyup="inputPhoneNumber(this);" placeholder="">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bt">
+                <div class="button">
+                    <button type="submit" class="btn btn-success">계정생성</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    //폰넘버 다종으로
+    function inputPhoneNumber(obj) {
+        var number = obj.value.replace(/[^0-9]/g, "");
+        var phone = "";
+
+        if(number.length < 4) {
+            return number;
+        } else if(number.length < 7) {
+            phone += number.substr(0, 3);
+            phone += "-";
+            phone += number.substr(3);
+        } else if(number.length < 11) {
+            phone += number.substr(0, 3);
+            phone += "-";
+            phone += number.substr(3, 3);
+            phone += "-";
+            phone += number.substr(6);
+        } else {
+            phone += number.substr(0, 3);
+            phone += "-";
+            phone += number.substr(3, 4);
+            phone += "-";
+            phone += number.substr(7);
+        }
+        obj.value = phone;
+    }
+
+    function passwordoverlap(){
+        
+        //(중요!!)비밀번호 영문 숫자 섞는 기능 넣어야함.
+
+        //팝업창에서 부모창을 다른페이지로 이동.
+        var PW = $('#PW').val();
+        var RePW = $('#RePW').val();
+        if(PW==""||RePW==""){
+            return false;
+            //둘 중 하나라도 값이 없을 경우
+        }
+        if (PW == RePW){
+            alert("동일한 패스워드 입니다.");
+        } else {
+            alert("패스워드를 다시 확인해주세요");
+            return false;
+        }
+    }
+
+
+    //ID 중복
+    function idoverlap(){
+        var Email = $('#Email').val();
+
+        $.ajax({
+            url: '/auth/idoverlap',
+            async: true,
+            type: 'POST',
+            data: {
+                Email: Email
+            },
+            dataType: 'json',
+            success: function(data) {
+                alert(data['ok']);
+            }
+        })
+    }
+
+    //회원가입 성공
+    function success(){
+        var Email = $('#Email').val();
+        var PW = $('#PW').val();
+        var RePW = $('#RePW').val();
+        var Name = $('#Name').val();
+        var EmployeeNum = $('#EmployeeNum').val();
+        var HP = $('#Hp').val();
+        var department = $('#Department').val();
+        if(Email == "" || PW == "" || RePW == "" || Name == "" || EmployeeNum == "" || HP == "" || department == "") {
+            alert("빈칸을 채워주세요.");
+            return false;
+        } else {
+            var test = "회원가입을 축하합니다. 관리자의 승인을 받은 후 사용 가능합니다.";
+            alert(test);
+            return true;
+        }
+    }
+    
+    $('#join').bind('submit', success);
+
+</script>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

@@ -1,0 +1,189 @@
+<style>
+    .body{
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    .sub_body{
+        margin-left: 4em;
+    }
+    .btn_button{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        color:#ffffff;
+        background-color: #40c463;
+        padding: 0;
+        border: none;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .btn_button_white{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        background-color: #ffffff;
+        padding: 0;
+        border: 1px solid gray;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .addinvbox{
+        width: 630px;
+        height: 35px;
+        margin-left: 4em;
+        margin-right: 4em;
+        text-align: left;
+        background-color: #ffffff;
+        border: #ffffff;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .addinvbox2{
+        width: 90%;
+        height: 35px;
+        margin-left: 1em;
+        margin-right: 1em;
+        text-align: left;
+        background-color: #ffffff;
+        border: #ffffff;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .textarea{
+        width: 690px;
+        height: 300px;
+    }
+    #textarea{
+        -moz-appearance: textfield-multiline;
+        -webkit-appearance: textarea;
+        border: 1px solid gray;
+        font: medium;
+        font: -webkit-small-contorl;
+        text-align: left;
+        height: 100px;
+        overflow: auto;
+        padding: 2px;
+        resize: both;
+        width: 600px;
+    }
+    .addcontainer{
+        width: 90% ;
+        height: 300;
+    }
+</style>
+
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 54px; color: white;">
+    <div class="card-header mx-auto" style="background: #40c463; font-size: 30px; width: 100%;">
+        <!--span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span-->
+        <span class="mx-auto d-block" style="float: left">가입승인</span>
+    </div>
+</div>
+<div class="container" style="margin-top: 45px;">
+    <div class="addinvbox2" style="text-align: right;">
+        <a style="color:#40c463; margin-right: 0.1em;font-size: medium;">일괄선택</a>
+        <input type="checkbox" id="chkall" name="chkall" style="float: right;margin-top: 0.3em;" onclick="all_check()"></input>
+    </div>
+    <div class="col-sm-12 mx-auto d-block" style="float: left; margin-top: 0.1em;">
+        <div style="height: 215px; margin-top: 1em; margin-left: 1em; overflow: auto;  margin-right: 1.5em;">
+            <table id="recive-table" class="table table-borderless table-hover" style="border-top: 1px solid #c6edd1; table-layout: fixed; font-size: small;">
+                <thead style="background-color:#40c463;">
+                    <tr>
+                        <th style="color: #ffffff; border-radius: 10px 0 0 10px;">번호</th>
+                        <th style="color: #ffffff;">이름</th>
+                        <th style="color: #ffffff;">이메일</th>
+                        <th style="color: #ffffff;">사원번호</th>
+                        <th style="color: #ffffff;">핸드폰번호</th>
+                        <th style="color: #ffffff; border-radius: 0 10px 10px 0;">승인여부</th>
+
+                    </tr>
+                </thead>
+                <% for(var i = 0; i < rv.length; i++){ %>
+                    <% if(rv.lenght != 0){%>
+                        <tr>
+                            <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= i + 1 %></td>
+                            <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].Name %></td>
+                            <td style=" width:50%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].Email %></td>
+                            <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].id %></td>
+                            <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].HP %></td>
+                            <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><input type="checkbox" id="<%= rv[i].id %>" name="approvalchk" onclick="approval_checked()"></input></td>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <!--windowclose()함수가 무조건 창이 꺼지게 만드는 함수.-->
+                <button class="btn btn-success" id="" onclick="windowclose()" style="float: right; margin-top : 1em; margin-right: 1.5em;" type="button"><span style="color: white">승인</span></a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+//승인
+function windowclose(){
+    $.ajax({
+        url: '/approval_of_subscription/search',
+        async: true,
+        type: 'POST',
+        dataType: 'json',
+
+        success: function(data) {
+            //서버에서 메시지를 받아서 출력
+            var result_data = (data['ok']);
+
+            //alert(result_data.length);
+
+            for(var i=0; i<result_data.length;i++){
+                var checkbox = $("input[id=" + result_data[i].id + "]:checked");
+                var col1 = "";
+
+                //alert(result_data);
+                checkbox.each(function (i){
+                    var tr = checkbox.parent().parent().eq(i);
+                    var td = tr.children();
+                    col1 = td.eq(3).text();
+                });
+
+                if(col1 == result_data[i].id){
+                    var result_data = (data['ok']);
+                    $.ajax({
+                        url: '/approval_of_subscription/Apply',
+                        async: true,
+                        type: 'POST',
+                        data: {
+                            col1: col1,
+                        },
+                        dataType: 'json',
+                        success: function(data){
+                            var temp = (data['ok']);
+
+                            if(temp == 1){
+                                alert("승인 완료");
+                                window.location.href='/approval_of_subscription';
+                            }
+                        }
+                    })
+                }
+            }
+            
+        }
+    })
+}
+
+//전체 체크
+function all_check(){
+    if($("#chkall").is(":checked")){
+        $("input[name=approvalchk]").prop("checked",true);
+    }
+    else{
+        $("input[name=approvalchk]").prop("checked",false);
+    }
+}
+</script>
+<%include ../include/header.ejs%>
+<%include ../include/footer.ejs%>

@@ -1,0 +1,103 @@
+<style>
+
+</style>
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">신규물품등록</span>
+    </div>
+</div>
+
+<div style="margin-top: 20px; width: 670px;">
+    <div class="row" style="width: 640px; margin-left: 1.5em;">
+        <div class="mx-auto d-block" style="float: left; margin-top: 1em; margin-left: 1em; width: 300px;">
+            <div style="width: 300px; height: 35px">
+                <div class="row">
+                    <a for="textTitle" style="font-size: 18px; color: #40c463;">물품번호 : </a>
+                    <div>
+                        <input type="text" id="Number" name="subjectNum" style="font-style: 12px; margin-top: 0.1em; margin-left: 1em;" disabled value="<%= rv[0].id + 1 %>">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="width: 300px; height: 35px">    
+                <div class="row">
+                    <a for="textTitle" style="font-size: 18px; color: #40c463;">물품명 : </a>
+                    <div class="row">
+                        <input type="text" id="Order_Name" name="subjectName" style="font-style: 12px; margin-top: 0.1em; margin-left: 3.3em; height: 28px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto d-block" style="float: left; margin: 1em; width: 300px;">
+            <div style="height: 300px; width: 300px;">
+                <img class="card-img-top" id="imgshow" src="#" alt="Card image" height="300px" style="padding: 5px">
+            </div>
+            <div class="row" style="height: 55px; width: 300px; margin-left: 0.5em; text-align: left;">
+                <input type="file" id="imgfile" style="float: left; margin-top: 1em;" accept=".jpg,.jpeg,.png" onchange="imgfile_show()">
+            </div>
+            <div class="row">
+                <div style="height: 35px; width: 300px;">
+                    <button class="btn btn-success" id="" onclick="windowclose()" style="float: right; margin-top : 1em; margin-right: -0.6em;" type="button"><span style="color: white">입력</span></a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var url;
+    function imgfile_show(){
+        var imgfile = document.getElementById('imgfile');
+        var reader= new FileReader();
+        var formData = new FormData();
+        formData.append('img', imgfile.files[0]);
+        var result = reader.readAsDataURL(imgfile.files[0]);
+        var xhr = new XMLHttpRequest();
+        reader.onload=function(){
+            if (xhr.status === 200){
+                document.getElementById('imgshow').src=reader.result;
+                url = JSON.parse(xhr.responseText).url;
+                //alert(url);
+            }
+        }
+
+        xhr.open('POST', '/order_registration/img');
+        xhr.send(formData);
+
+        alert("파일 업로드 완료");
+    }
+
+    //등록
+    function windowclose(){
+        var Order_Name = $('#Order_Name').val();
+
+        if(Order_Name == "" || url == undefined){
+            alert("빈칸을 채워주시거나 이미지 파일을 업로드 해주세요");
+        }else{
+            $.ajax({
+            url: '/order_registration/order_add',
+            async: true,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                Order_Name: Order_Name,
+                url: url,
+            },
+
+            success: function(data) {
+                //서버에서 메시지를 받아서 출력
+                var result_data = (data['ok']);
+
+                if(result_data == 1)
+                    alert("등록 완료");
+                    window.location.href='/order_registration';
+                }
+            })
+        }
+    }
+</script>
+<%include ../include/header.ejs%>
+<%include ../include/style.ejs%>

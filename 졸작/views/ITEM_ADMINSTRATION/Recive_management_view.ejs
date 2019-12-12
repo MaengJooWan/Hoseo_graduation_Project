@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left"><%= recive_d[0].name %></span>
+    </div>
+</div>
+
+<div class="form-group" style="padding:240px; margin-top: 20px;">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">상품관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">입고 관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#"><%= recive_d[0].name%></a></li>
+    </ul>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">대분류</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].large_category %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">소분류</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].small_category %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">품목 이름</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].name %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">고유번호</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].unique_number %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">수량</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].quantity %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">입고날짜</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= recive_d[0].receiving_date %>">
+    </div>
+</div>
+
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

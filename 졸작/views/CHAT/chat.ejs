@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">방 목록</span>
+        <button type="button" id="button" name="button" class="btn btn-success float-right btn-lg">방 만들기</button>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px; height: 680px">
+
+    <% if(rooms_arrays.length == 0){ %>
+        <h4>방이 존재하지 않습니다.</h4>
+    <% }else{ %>
+        <% for(var i = 0; i < rooms_arrays.length; i++){ %>
+            <div class="card">
+                <div class="card-body">
+                    <form action="http://127.0.0.1:3000/connect_chat/in_room" accept-charset="utf-8"
+                          method="get">
+                        <h4 class="card-title" style="text-align: center"><%= rooms_arrays[i] %>의 방</h4>
+                        <input type="list_room_name" hidden name="room_name" id="room_name" readonly style="border: none"
+                               class="form-control" value="<%= rooms_arrays[i] %>">
+                        <button type="submit" style="width: 100%" class="btn btn-success">입장</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+
+</div>
+
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+<!--밑에는 풋터레이아웃-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+<script>
+    function post_to_url(path, params, method) {
+        method = method || "post";
+
+        var form = document.createElement("form");
+
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+
+        form.submit();
+
+        return false;
+    }
+
+    $(function () {
+        // socket.io 서버에 접속한다
+        var socket = io();
+        var check = 0;
+
+        $("#button").click(function () {
+            location.href = "http://127.0.0.1:3000/connect_chat/room?room_name=<%= name %>";
+        });
+
+    });
+</script>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

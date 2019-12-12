@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3abf4aef-7d4c-4316-bbaf-00c9f3ebe7b2" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="956">
+              <caret line="122" column="59" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.1/core-modules/internal/process/next_tick.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/CHAT/chat_room.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="292" lean-forward="true" selection-start-line="292" selection-end-line="292" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#12336#12926#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/CHAT/CHAT_MAIN.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/CHAT/chat.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="292" column="39" lean-forward="true" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#11579#12169#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management_write.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2538">
+              <caret line="451" column="11" lean-forward="true" selection-start-line="446" selection-start-column="7" selection-end-line="451" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_standby.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="285" selection-start-line="285" selection-end-line="287" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/Main_index.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="203" column="43" selection-start-line="203" selection-start-column="43" selection-end-line="203" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fc-head</find>
+      <find>fc-day-header</find>
+      <find>fc-today</find>
+      <find>fc-left</find>
+      <find>July</find>
+      <find>format</find>
+      <find>J</find>
+      <find>_m</find>
+      <find>_arrayEntry</find>
+      <find>locales</find>
+      <find>today</find>
+      <find>'today'</find>
+      <find>#calendar-container</find>
+      <find>container</find>
+      <find>fc_day</find>
+      <find>fc-button-pri</find>
+      <find>fc td</find>
+      <find>fc-right</find>
+      <find>swiper-button-next</find>
+      <find>007aff</find>
+      <find>.swiper-pagination-bullet-active</find>
+      <find>home</find>
+      <find>myChart</find>
+      <find>출고</find>
+      <find>query</find>
+      <find>results</find>
+      <find>date</find>
+      <find>update</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Inventory_location.ejs" />
+        <option value="$PROJECT_DIR$/routes/SMART_MANAGEMENT/INVENTORY_LOCATION.js" />
+        <option value="$PROJECT_DIR$/views/RECEIVING_QUANTITY_GRAPH/Receiving_quantity_graph.ejs" />
+        <option value="$PROJECT_DIR$/views/SMART_MANAGEMENT/Inventory_location.ejs" />
+        <option value="$PROJECT_DIR$/개발일지/07-15.txt" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/MYSQL_GET/LOAD_FRIUTS_QUANTITY.js" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management_write.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management_view.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management_view.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management_write.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Inventory_management_view.ejs" />
+        <option value="$PROJECT_DIR$/개발일지/07-18.txt" />
+        <option value="$PROJECT_DIR$/개발일지/07-19.txt" />
+        <option value="$PROJECT_DIR$/개발메모.txt" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management.ejs" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/FORWARD_MANAGEMENT.js" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/RECIVE_MANAGEMENT.js" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Inventory_management.ejs" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/INVENTORY_MANAGEMENT.js" />
+        <option value="$PROJECT_DIR$/개발일지/07-20.txt" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management_view.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management_write.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Expiration_of_validity_period_view.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Expiration_of_validity_period.ejs" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/QUALITY_MANAGEMENT.js" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/ORDER_STANBY.js" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/ORDER_REGISTRATION.js" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_registration.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_standby.ejs" />
+        <option value="$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_standby_view.ejs" />
+        <option value="$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information.ejs" />
+        <option value="$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information1.ejs" />
+        <option value="$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information2.ejs" />
+        <option value="$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information3.ejs" />
+        <option value="$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information4.ejs" />
+        <option value="$PROJECT_DIR$/routes/PERSONNEL_MANAGEMENT/PERSONNEL_INFORMATION.js" />
+        <option value="$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/EXPIRATION_OF_VALIDITY_PERIOID.js" />
+        <option value="$PROJECT_DIR$/routes/CHECK_MANAGEMENT/RECEIVING_QUANTITY_GRAPH.js" />
+        <option value="$PROJECT_DIR$/views/CHECK_MANAGEMENT/Receiving_quantity_graph.ejs" />
+        <option value="$PROJECT_DIR$/routes/CHECK_MANAGEMENT/FORWARDING_QUANTITY_GRAPH.js" />
+        <option value="$PROJECT_DIR$/views/CHECK_MANAGEMENT/Forwarding_quantity_graph.ejs" />
+        <option value="$PROJECT_DIR$/bin/www" />
+        <option value="$PROJECT_DIR$/views/CHAT/chat.html" />
+        <option value="$PROJECT_DIR$/views/Main_index.ejs" />
+        <option value="$PROJECT_DIR$/views/CHAT/chat.ejs" />
+        <option value="$PROJECT_DIR$/routes/CHAT/CHAT_MAIN.js" />
+        <option value="$PROJECT_DIR$/views/CHAT/chat_room.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="223" />
+    <option name="y" value="1" />
+    <option name="width" value="1510" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="CHAT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="CHAT" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Public\nodes\untitled\views\PERSONNEL_MANAGEMENT" />
+      <recent name="C:\Users\Public\nodes\untitled\views\ITEM_ADMINSTRATION" />
+      <recent name="C:\Users\Public\nodes\untitled\개발일지" />
+      <recent name="C:\Users\Public\nodes\untitled\routes\CHECK_MANAGEMENT" />
+      <recent name="C:\Users\Public\nodes\untitled\views\CHECK_MANAGEMENT" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3abf4aef-7d4c-4316-bbaf-00c9f3ebe7b2" name="Default Changelist" comment="" />
+      <created>1562591077907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562591077907</updated>
+      <workItem from="1562591080219" duration="15020000" />
+      <workItem from="1562760422734" duration="608000" />
+      <workItem from="1562858365534" duration="3389000" />
+      <workItem from="1562935553473" duration="3120000" />
+      <workItem from="1562951098058" duration="4301000" />
+      <workItem from="1563035922670" duration="8559000" />
+      <workItem from="1563046489184" duration="118000" />
+      <workItem from="1563046723485" duration="725000" />
+      <workItem from="1563121819540" duration="586000" />
+      <workItem from="1563122838762" duration="438000" />
+      <workItem from="1563124632655" duration="5985000" />
+      <workItem from="1563130738747" duration="45000" />
+      <workItem from="1563365940417" duration="8473000" />
+      <workItem from="1563388312356" duration="6526000" />
+      <workItem from="1563479428613" duration="3885000" />
+      <workItem from="1563483425907" duration="244000" />
+      <workItem from="1563547369600" duration="8211000" />
+      <workItem from="1563624243661" duration="1077000" />
+      <workItem from="1563658009566" duration="1548000" />
+      <workItem from="1563708267025" duration="271000" />
+      <workItem from="1563708579768" duration="6165000" />
+      <workItem from="1563737161086" duration="8227000" />
+      <workItem from="1563747720273" duration="2699000" />
+      <workItem from="1563767046032" duration="3863000" />
+      <workItem from="1563798057182" duration="3771000" />
+      <workItem from="1563818942003" duration="1314000" />
+      <workItem from="1563909951156" duration="4669000" />
+      <workItem from="1564071967013" duration="2869000" />
+      <workItem from="1564171938950" duration="1934000" />
+      <workItem from="1564235639356" duration="19388000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="128028000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7796102" visible="true" weight="0.16385669" />
+      <window_info id="Structure" order="1" sideWeight="0.2203898" side_tool="true" visible="true" weight="0.16385669" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.42202318" side_tool="true" weight="0.2751896" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.5779768" visible="true" weight="0.27735645" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/개발일지/07-20.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management_write.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6745">
+          <caret line="355" column="14" selection-start-line="355" selection-start-column="14" selection-end-line="355" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5320">
+          <caret line="280" column="54" selection-start-line="280" selection-start-column="54" selection-end-line="280" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/12.jpg" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5852">
+          <caret line="314" column="12" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="66" column="11" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10887">
+          <caret line="579" column="16" selection-start-line="579" selection-start-column="16" selection-end-line="579" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/img/12.jpg" />
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management_write.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5529">
+          <caret line="291" column="19" selection-start-line="291" selection-start-column="19" selection-end-line="291" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5776">
+          <caret line="304" column="56" selection-start-line="304" selection-start-column="56" selection-end-line="304" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Recive_management.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5263">
+          <caret line="277" selection-start-line="277" selection-end-line="399" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Inventory_management_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6042">
+          <caret line="318" column="6" selection-start-line="274" selection-end-line="318" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/INVENTORY_MANAGEMENT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="283" column="50" lean-forward="true" selection-start-line="283" selection-start-column="22" selection-end-line="283" selection-end-column="50" />
+          <folding>
+            <element signature="e#486#1286#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/ORDER_STANBY.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="22" selection-start-line="22" selection-end-line="44" selection-end-column="3" />
+          <folding>
+            <element signature="e#7260#13563#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/개발메모.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Quality_management.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5168">
+          <caret line="272" column="10" selection-start-line="230" selection-start-column="4" selection-end-line="272" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_standby_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="216" column="36" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5453">
+          <caret line="287" column="69" selection-start-line="287" selection-start-column="69" selection-end-line="287" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information1.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5643">
+          <caret line="297" column="76" selection-start-line="297" selection-start-column="76" selection-end-line="297" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/ORDER_REGISTRATION.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="72" column="72" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="72" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information2.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5643">
+          <caret line="297" column="77" selection-start-line="297" selection-start-column="77" selection-end-line="297" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information3.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5643">
+          <caret line="297" column="76" selection-start-line="297" selection-start-column="76" selection-end-line="297" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PERSONNEL_MANAGEMENT/Personnel_information4.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5605">
+          <caret line="295" column="86" lean-forward="true" selection-start-line="295" selection-start-column="86" selection-end-line="295" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/PERSONNEL_MANAGEMENT/PERSONNEL_INFORMATION.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/RECIVE_MANAGEMENT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2014">
+          <caret line="106" column="34" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/CHECK_MANAGEMENT/RECEIVING_QUANTITY_GRAPH.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="44" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Expiration_of_validity_period_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6213">
+          <caret line="327" selection-start-line="327" selection-end-line="327" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Expiration_of_validity_period.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5434">
+          <caret line="286" column="27" selection-start-line="285" selection-start-column="13" selection-end-line="286" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CHECK_MANAGEMENT/Receiving_quantity_graph.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5852">
+          <caret line="308" column="15" selection-start-line="287" selection-start-column="8" selection-end-line="308" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Inventory_management.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5415">
+          <caret line="285" column="119" selection-start-line="285" selection-start-column="8" selection-end-line="285" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/CHECK_MANAGEMENT/FORWARDING_QUANTITY_GRAPH.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/EXPIRATION_OF_VALIDITY_PERIOID.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="90" column="95" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/QUALITY_MANAGEMENT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="129" column="43" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="271" column="10" lean-forward="true" selection-start-line="271" selection-start-column="10" selection-end-line="271" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ITEM_ADMINSTRATION/FORWARD_MANAGEMENT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="114" column="18" lean-forward="true" selection-start-line="104" selection-start-column="15" selection-end-line="114" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CHECK_MANAGEMENT/Forwarding_quantity_graph.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2818">
+          <caret line="362" selection-start-line="362" selection-end-line="363" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_registration.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="313" column="11" lean-forward="true" selection-start-line="304" selection-start-column="7" selection-end-line="313" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="30" column="109" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.1/core-modules/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="188" column="12" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="527" column="11" selection-start-line="527" selection-start-column="11" selection-end-line="527" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.1/core-modules/internal/process/next_tick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Main_index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="203" column="43" selection-start-line="203" selection-start-column="43" selection-end-line="203" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management_write.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Forward_management.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="451" column="11" lean-forward="true" selection-start-line="446" selection-start-column="7" selection-end-line="451" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ITEM_ADMINSTRATION/Order_standby.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="285" selection-start-line="285" selection-end-line="287" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/CHAT/CHAT_MAIN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CHAT/chat.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="292" column="39" lean-forward="true" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#11579#12169#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CHAT/chat_room.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="292" lean-forward="true" selection-start-line="292" selection-end-line="292" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#12336#12926#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="956">
+          <caret line="122" column="59" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

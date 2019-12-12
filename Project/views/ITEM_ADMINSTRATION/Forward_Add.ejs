@@ -1,0 +1,271 @@
+<style>
+    .body{
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    .sub_body{
+        margin-left: 4em;
+    }
+    .btn_button{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        color:#ffffff;
+        background-color: #40c463;
+        padding: 0;
+        border: none;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .btn_button_white{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        background-color: #ffffff;
+        padding: 0;
+        border: 1px solid gray;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .addinvbox2{
+        width: 510px;;
+        height: 35px;
+        margin-left: 4em;
+        margin-right: 4em;
+        text-align: left;
+        background-color: #ffffff;
+        border: #ffffff;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .addinvbox{
+        width: 400px;
+        height: 35px;
+        margin-left: 4em;
+        margin-right: 4em;
+        text-align: left;
+        background-color: #ffffff;
+        border: #ffffff;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .textarea{
+        width: 690px;
+        height: 300px;
+    }
+    #textarea{
+        -moz-appearance: textfield-multiline;
+        -webkit-appearance: textarea;
+        border: 1px solid gray;
+        font: medium;
+        font: -webkit-small-contorl;
+        text-align: left;
+        height: 100px;
+        overflow: auto;
+        padding: 2px;
+        resize: both;
+        width: 600px;
+    }
+    .addcontainer{
+        width: 940;
+        height: 300;
+    }
+</style>
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 54px; color: white; width: 940px;">
+    <div class="card-header mx-auto" style="background: #40c463; font-size: 30px; width: 100%;">
+        <!--span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span-->
+        <span class="mx-auto d-block" style="float: left">출고등록</span>
+    </div>
+</div>
+<div class="addcontainer" style="margin-top: 20px">
+    <div class="row" style="width: 940;">
+        <div class="mx-auto d-block" style="float: left; margin: 1em; width: 400px;">
+            <div class="row">
+                <div class="addinvbox">
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">물품번호 : </a>
+                        <div>
+                            <input type="text" id="Number" name="subjectNum" style="font-style: 12px; margin-top: 0.1em; margin-left: 1em;" disabled>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="addinvbox">    
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">물품명 : </a>
+                        <div class="row">
+                            <input type="text" id="Name" name="subjectName" style="font-style: 12px; margin-top: 0.1em; margin-left: 3.3em; height: 28px;">
+                            <button class="btn btn-success" onclick="search()" style="margin-left: 0.1em;"><span style="color: white;font-size: small;">검색</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="addinvbox">     
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">날짜 : </a>
+                        <div class="form-group">
+                            <input type="date" id="Date" name="day" max="3000-12-31"
+                                min="1000-01-01" style="font-style: 12px; margin-top: 0.1em; margin-left: 3.5em;">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="addinvbox">     
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">출고수량 : </a>
+                        <div>
+                            <input type="text" id="Input" name="Received_subject_num" style="font-style: 12px; margin-top: 0.1em; margin-left: 1em;" onblur="all_price_result()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="addinvbox">     
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">가격(개당) : </a>
+                        <div>
+                            <input type="text" id="Price" name="Faulty_subject_num" style="font-style: 12px; margin-top: 0.1em; margin-left: 0.25em;" onblur="all_price_result()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="addinvbox">     
+                    <div class="row">
+                        <a for="textTitle" style="font-size: 18px; color: #40c463;">가격(총) : </a>
+                        <div>
+                            <input type="text" id="All_Price" name="All_Price" style="font-style: 12px; margin-top: 0.1em; margin-left: 1.5em;" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto d-block" style="float: left; margin: 1em; width: 510px;">
+            <div style="height: 215px; overflow: auto;">
+                <table id="recive-table" class="table table-borderless table-hover" style="border-top: 1px solid #c6edd1; table-layout: fixed; font-size: small;">
+                        <thead style="background-color:#40c463;">
+                            <tr>
+                                <th style="color: #ffffff; border-radius: 10px 0 0 10px;">번호</th>
+                                <th style="color: #ffffff;">물품번호</th>
+                                <th style="color: #ffffff;">물품명</th>
+                                <th style="color: #ffffff; border-radius: 0 10px 10px 0;">선택</th>
+                            </tr>
+                        </thead>
+
+                        <% if(rv.length == 0 && select == 1) {%>
+                            <script type="text/javascript">
+                                alert("값이 존재하지 않습니다.");    
+                            </script>
+                        <%}else{%>
+                            <% for(var i = 0; i < rv.length; i++){ %>
+                                <% if(rv.lenght != 0){%>
+                                    <tr>
+                                        <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= i + 1 %></td>
+                                        <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].id %></td>
+                                        <td style=" width:50%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><%= rv[i].Name %></td>
+                                        <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; border-bottom: 1px solid #c0c0c0;"><input id="<%= rv[i].id %>" name="radio_button" type="radio" onclick="approval_checked()"></td>
+                                    </tr>
+                                <% } %>
+                            <% } %>
+                        <%}%>
+                    </table>
+                <div class="row">
+                    <div class="addinvbox2">
+                        <button class="btn btn-success" id="" onclick="windowclose()" style="float: right; margin-top : 1em; margin-right: -2em;" type="submit"><span style="color: white">입력</span></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function windowclose(){
+        var stationery_no = $('#Number').val();
+        var date = $('#Date').val();
+        var count = $('#Input').val();
+        var price = $('#Price').val();
+        var all_price = $('#All_Price').val();
+
+
+        if(stationery_no == "" || date == "" || count == "" || price == "" || all_price == ""){
+            alert("빈칸을 채워주세요.");
+        }else{
+            $.ajax({
+            url: '/forward_add/forward_add',
+            async: true,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                Stationery_NO: stationery_no,
+                date: date,
+                Count: count,
+                Price: price,
+                All_Price: all_price,
+            },
+
+            success: function(data) {
+                //서버에서 메시지를 받아서 출력
+                var result_data = (data['ok']);
+
+                if(result_data == 1)
+                    alert("등록 완료");
+                    window.close();
+                }
+            })
+        }
+    }
+
+
+
+    function all_price_result(){
+        var price = $('#Price').val();
+        var count = $('#Input').val();
+
+        if(price == "" || count == ""){
+            //alert("가격와 수량에 가격을 표시해주세요.");
+        }else{
+            var result = price * count;
+            document.getElementById("All_Price").value = result;
+        }
+    }
+
+    function search(){
+        //검색
+        var search_name = $('#Name').val();
+
+        if(search_name == ""){
+            alert('물품명에 물품이름을 입력 후 검색을 누르세요.');
+            return false;
+        }else{
+            $.ajax({
+                url: '/forward_add/forward_search',
+                async: true,
+                type: 'POST',
+                data: {
+                    Search: search_name,
+                },
+                dataType: 'json',
+            })
+            
+            window.location.href='/forward_add';
+        }
+    }
+
+    function approval_checked(){
+        var approvalchk = $("input[name=radio_button]:checked");
+        var col1;
+        var col2;
+
+        approvalchk.each(function (i){
+            var tr = approvalchk.parent().parent().eq(i);
+            var td = tr.children();
+            col1 = td.eq(1).text();
+            col2 = td.eq(2).text();
+        });
+
+        document.getElementById("Number").value = col1;
+        document.getElementById("Name").value = col2;
+    }
+</script>
+
+
+<%include ../include/subheader.ejs%>

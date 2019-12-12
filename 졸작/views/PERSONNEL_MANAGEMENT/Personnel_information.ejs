@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">멤버</span>
+        <div class="dropdown float-right">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                멤버선택
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/personnel_information/?number=0" style="color: #34a853">관리부</a>
+                <a class="dropdown-item" href="/personnel_information/?number=1" style="color: #34a853">재경부</a>
+                <a class="dropdown-item" href="/personnel_information/?number=2" style="color: #34a853">마케팅부</a>
+                <a class="dropdown-item" href="/personnel_information/?number=3" style="color: #34a853">무역부</a>
+                <a class="dropdown-item" href="/personnel_information/?number=4" style="color: #34a853">물류부</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12" style="float: left; margin-top: 10px; margin-bottom: 10px; text-align: center; color: black">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" style=" color: #34a853;">인사관리</a></li>
+        <li class="breadcrumb-item"><a href="#" style=" color: #34a853;">인사정보</a></li>
+        <li class="breadcrumb-item"><a href="#" style=" color: #34a853;">관리부</a></li>
+    </ul>
+    <div class="card" style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <img class="card-img-top" src="https://fakeimg.pl/250x180" alt="Card image" height="180px" style="padding: 5px">
+        <div class="card-body" style="height: 220px">
+            <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정종필&nbsp<span class="badge badge-secondary" style="background-color: #40c463">책임자</span></h4>
+            <p class="card-text"><i class='fas fa-id-badge'></i>&nbsp&nbsp소속:  성균관대학교</p>
+            <p class="card-text"><i class='fas fa-phone'></i>&nbsp연락처: 031-0000-000</p>
+            <p class="card-text"><i class='fas fa-at'></i>&nbsp이메일: 0000@gmail.com</p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1" style="width: 100%">
+                정보보기
+            </button>
+        </div>
+    </div>
+    <div class="card" style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <img class="card-img-top" src="https://fakeimg.pl/250x180" alt="Card image" height="180px" style="padding: 5px">
+        <div class="card-body" style="height: 220px">
+            <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정희운&nbsp<span class="badge badge-secondary" style="background-color: #40c463">직원</span></h4>
+            <p class="card-text"><i class='fas fa-id-badge'></i>&nbsp&nbsp소속:  호서대학교</p>
+            <p class="card-text"><i class='fas fa-phone'></i>&nbsp연락처: 031-0000-000</p>
+            <p class="card-text"><i class='fas fa-at'></i>&nbsp이메일: 0000@gmail.com</p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2" style="width: 100%">
+                정보보기
+            </button>
+        </div>
+    </div>
+    <div class="card" style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <img class="card-img-top" src="https://fakeimg.pl/250x180" alt="Card image" height="180px" style="padding: 5px">
+        <div class="card-body" style="height: 220px">
+            <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 박병기&nbsp<span class="badge badge-secondary" style="background-color: #40c463">직원</span></h4>
+            <p class="card-text"><i class='fas fa-id-badge'></i>&nbsp&nbsp소속:  호서대학교</p>
+            <p class="card-text"><i class='fas fa-phone'></i>&nbsp연락처: 031-0000-000</p>
+            <p class="card-text"><i class='fas fa-at'></i>&nbsp이메일: 0000@gmail.com</p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal3" style="width: 100%">
+                정보보기
+            </button>
+        </div>
+    </div>
+    <div class="card" style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <img class="card-img-top" src="https://fakeimg.pl/250x180" alt="Card image" height="180px" style="padding: 5px">
+        <div class="card-body" style="height: 220px">
+            <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 박태준&nbsp<span class="badge badge-secondary" style="background-color: #40c463">직원</span></h4>
+            <p class="card-text"><i class='fas fa-id-badge'></i>&nbsp&nbsp소속: (주)윅스콘</p>
+            <p class="card-text"><i class='fas fa-phone'></i>&nbsp연락처: 031-0000-000</p>
+            <p class="card-text"><i class='fas fa-at'></i>&nbsp이메일: 0000@gmail.com</p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4" style="width: 100%">
+                정보보기
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">상세 내용</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="height: 200px">
+                <img class="card-img-top" src="https://fakeimg.pl/100x50" alt="Card image" height="170" style="padding: 5px; width: 180px; float: left">
+                <div class="card-body" style="height: 220px; float: left;">
+                    <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정종필&nbsp<span class="badge badge-secondary" style="background-color: #40c463">책임자</span></h4>
+                    <p class="card-text">업무:  </p>
+
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">상세 내용</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="height: 200px">
+                <img class="card-img-top" src="https://fakeimg.pl/100x50" alt="Card image" height="170" style="padding: 5px; width: 180px; float: left">
+                <div class="card-body" style="height: 220px; float: left;">
+                    <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정종필&nbsp<span class="badge badge-secondary" style="background-color: #40c463">책임자</span></h4>
+                    <p class="card-text">업무:  </p>
+
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">상세 내용</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="height: 200px">
+                <img class="card-img-top" src="https://fakeimg.pl/100x50" alt="Card image" height="170" style="padding: 5px; width: 180px; float: left">
+                <div class="card-body" style="height: 220px; float: left;">
+                    <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정종필&nbsp<span class="badge badge-secondary" style="background-color: #40c463">책임자</span></h4>
+                    <p class="card-text">업무:  </p>
+
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">상세 내용</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="height: 200px">
+                <img class="card-img-top" src="https://fakeimg.pl/100x50" alt="Card image" height="170" style="padding: 5px; width: 180px; float: left">
+                <div class="card-body" style="height: 220px; float: left;">
+                    <h4 class="card-title"><i class='fas fa-male'></i>&nbsp이름 : 정종필&nbsp<span class="badge badge-secondary" style="background-color: #40c463">책임자</span></h4>
+                    <p class="card-text">업무:  </p>
+
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12" style="float: left; margin-top: 20px"><!--미사용-->
+    <div class="card" style="width:250px; float: left; margin-left: 90px; margin-right: 70px; height: 330px; border: none">
+    </div>
+    <div class="card" style="width:250px; float: left; margin-left: 90px; margin-right: 70px; height: 330px; border: none">
+    </div>
+    <div class="card" style="width:250px; float: left; margin-left: 90px; margin-right: 70px; height: 330px; border: none">
+    </div>
+    <div class="card" style="width:250px; float: left; margin-left: 90px; margin-right: 70px; height: 330px; border: none">
+    </div>
+</div>
+
+<!--밑에는 풋터레이아웃-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+<script>
+
+    function post_to_url(path, params, method) {
+        method = method || "post";
+
+        var form = document.createElement("form");
+
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+
+        form.submit();
+
+        return false;
+    }
+
+    $("#inquiry-table tr").click(function () {
+        var str = ""
+        var tdArr = new Array();	// 배열 선언
+        var tr = $(this);
+        var td = tr.children();
+        post_to_url('http://127.0.0.1:3000/Inquiry/view', {
+            'TITLE': td.eq(1).text(),
+            'WRITER': td.eq(2).text(),
+            'DATE': td.eq(3).text(),
+            'CHECK': 1
+        });
+
+    });
+</script>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

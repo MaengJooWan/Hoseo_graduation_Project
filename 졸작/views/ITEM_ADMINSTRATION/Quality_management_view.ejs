@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left"><%= quality_d[0].name %></span>
+    </div>
+</div>
+<form action="http://127.0.0.1:3000/quality_management/write" accept-charset="utf-8" name="write" method="get">
+<div class="form-group" style="padding:240px; margin-top: 20px;">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">상품관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">품질 관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#"><%= quality_d[0].name %></a></li>
+    </ul>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">대분류</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].large_category %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">소분류</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].small_category %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">품목 이름</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].name %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">고유번호</p>
+        </div>
+        <input type="text" name="unique_number" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].unique_number %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">수량</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].quantity %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">검사자</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].inspector %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">입고날짜</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].receiving_date %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">출고날짜</p>
+        </div>
+        <input type="text" style="width: 130px" class="form-control" placeholder="" readonly
+               value="<%= quality_d[0].forwarding_date %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">비고</p>
+        </div>
+        <textarea id="test" class="form-control" readonly="readonly" cols="40" rows="10">
+            <%= quality_d[0].explanation %>
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-success mx-auto d-block" style="margin-top: 5px">수정</button>
+</div>
+</form>
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+<!--밑에는 풋터레이아웃-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+<script>
+
+    function post_to_url(path, params, method) {
+        method = method || "post";
+
+        var form = document.createElement("form");
+
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+
+        form.submit();
+
+        return false;
+    }
+
+    $("#inquiry-table tr").click(function () {
+        var str = ""
+        var tdArr = new Array();	// 배열 선언
+        var tr = $(this);
+        var td = tr.children();
+        post_to_url('http://127.0.0.1:3000/quality_management/view', {
+            "name": td.eq(0).text(),
+            "unique_number": td.eq(1).text(),
+            'quantity': td.eq(2).text(),
+            'receiving_date': td.eq(3).text()
+        });
+    });
+</script>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

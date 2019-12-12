@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">발주 등록</span>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">상품관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">발주 등록</a></li>
+    </ul>
+    <div class="col-sm-12">
+        <form action="http://127.0.0.1:3000/order_registration/write" method="post">
+            <h3 style="color: black">발주 등록</h3>
+            <div class="form-group">
+                <label class="float-left" for="FRIUTS_IMG">제품 이미지:</label>
+                <img src="https://fakeimg.pl/250x250/" style="margin: 15px" id = 'img1' class="mx-auto d-block">
+                <form action="http://127.0.0.1:3000/order_registration/upload" method="post"
+                      enctype="multipart/form-data" id="fileForm" name="fileForm">
+                    <input type="file" class="form-control-file border" id="imgFile" name="imgFile">
+                </form>
+            </div>
+
+            <div class="form-group">
+                <label for="FRIUTS_NAME">* 품목이름:</label>
+                <input type="text" class="form-control" name="name" id="name">
+                <div class="alert alert-danger" id="alert-danger" name="alert-danger" style="margin-top: 5px">이 입력란을
+                    작성하십시오.
+                </div>
+                <div class="alert alert-success" id="alert-success">입력되었습니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="FRIUTS_COUNT">* 수량:</label>
+                <input type="text" class="form-control" name="quantity" id="quantity">
+
+                <div class="form-check-inline" style="margin-top: 10px">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="BOX" name="optradio" value="BOX">BOX
+                    </label>
+                </div>
+
+                <div class="form-check-inline" style="margin-top: 10px">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="KG" name="optradio" value="KG">KG
+                    </label>
+                </div>
+                <div class="alert alert-danger" id="alert-danger1" name="alert-danger" style="margin-top: 5px">이 입력란을
+                    작성하십시오.
+                </div>
+                <div class="alert alert-success" id="alert-success1">입력되었습니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="COMPANY">* 회사:</label>
+                <input type="text" class="form-control" id="company" name="company">
+                <div class="alert alert-danger" id="alert-danger2" name="alert-danger" style="margin-top: 5px">이 입력란을
+                    작성하십시오.
+                </div>
+                <div class="alert alert-success" id="alert-success2">입력되었습니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="MESSAGE">비고:</label>
+                <textarea class="form-control" rows="10" id="explanation" name="explanation"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="float-left" for="FRIUTS_IMG">* 문서 파일:</label>
+                <form action="http://127.0.0.1:3000/order_registration/upload" method="post"
+                      enctype="multipart/form-data" id="fileForm" name="fileForm">
+                    <input type="file" class="form-control-file border" id="DOCUMENT" name="DOCUMENT">
+                </form>
+                <div class="alert alert-danger" id="alert-danger3" name="alert-danger" style="margin-top: 5px">이 입력란을
+                    작성하십시오.
+                </div>
+                <div class="alert alert-success" id="alert-success3">입력되었습니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="COSTUMER">등록자:</label>
+                <input type="text" class="form-control" readonly name="inspector" id="inspector"
+                       value="<%= name%>">
+            </div>
+            <button type="submit" class="btn btn-success" id="submit" style="width: 100%">등록</button>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+<!--밑에는 풋터레이아웃-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+<script type="text/javascript">
+    $('#imgFile').on('change', function () {
+        var formData = new FormData();
+        formData.append('img', document.getElementById('imgFile').files[0])
+        console.log(formData);
+        $.ajax({
+            url: 'http://127.0.0.1:3000/order_registration/upload',
+            processData: false,
+            contentType: false,
+            data: formData,
+            type: 'POST',
+            success: function (result) {
+                $('#img1').attr("src",'http://127.0.0.1:3000/upload/'+ result );
+            }
+        });
+    });
+
+    $('#DOCUMENT').on('change', function () {
+        var formData = new FormData();
+        formData.append('file', document.getElementById('DOCUMENT').files[0])
+        console.log(formData);
+        $.ajax({
+            url: 'http://127.0.0.1:3000/order_registration/upload1',
+            processData: false,
+            contentType: false,
+            data: formData,
+            type: 'POST',
+            success: function (result) {
+                console.log(result);
+            }
+        });
+    });
+
+    function post_to_url(path, params, method) {
+        method = method || "post";
+
+        var form = document.createElement("form");
+
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+
+        form.submit();
+
+        return false;
+    }
+
+    $("#submit").click(function () {
+        var optradio_c = 0;
+
+        if($('#BOX').prop("checked")){
+            optradio_c = 1;
+        }
+        if($('#KG').prop("checked")) {
+            optradio_c = 2;
+        }
+        post_to_url('http://127.0.0.1:3000/order_registration/write', {
+            "name": $("#name").val(),
+            "quantity": $("#quantity").val(),
+            "company": $("#company").val(),
+            "explanation": $("#explanation").val(),
+            "inspector": $("#inspector").val(),
+            "DOCUMENT": $("#DOCUMENT").val(),
+            "imgFile": $("#imgFile").val(),
+            "optradio": optradio_c
+        });
+    });
+
+    $(function () {
+        $("#alert-danger").hide();
+        $("#alert-danger1").hide();
+        $("#alert-danger2").hide();
+        $("#alert-danger3").hide();
+        $("#alert-success").hide();
+        $("#alert-success1").hide();
+        $("#alert-success2").hide();
+        $("#alert-success3").hide();
+        $("#submit").attr("disabled", "disabled");
+        $("input").keyup(function () {
+            var check = [0, 0, 0, 0];
+            var count = 0;
+            var pwd1 = $("#FRIUTS_NAME").val();
+            var pwd2 = $("#FRIUTS_COUNT").val();
+            var pwd3 = $("#COMPANY").val();
+            var pwd4 = $("#DOCUMENT").val();
+            var pwd5 = $('input:radio[name="optradio"]:checked').val();
+
+            if (pwd1 == "") {
+                $("#alert-danger").show();
+                $("#alert-success").hide();
+            } else {
+                $("#alert-danger").hide();
+                $("#alert-success").show();
+                check[0] = 1;
+            }
+
+            if (pwd2 == "") {
+                $("#alert-danger1").show();
+                $("#alert-success1").hide();
+            }
+
+            $("#BOX").change(function () {
+                $("#alert-danger1").hide();
+                $("#alert-success1").show();
+                check[1] = 1;
+            });
+
+            $("#KG").change(function () {
+                $("#alert-danger1").hide();
+                $("#alert-success1").show();
+                check[1] = 1;
+            });
+
+            if (pwd3 == "") {
+                $("#alert-danger2").show();
+                $("#alert-success3").hide();
+            } else {
+                $("#alert-danger2").hide();
+                $("#alert-success2").show();
+                check[2] = 1;
+            }
+
+            if (pwd4 == "") {
+                $("#alert-danger3").show();
+                $("#alert-success3").hide();
+            }
+
+            $("#DOCUMENT").change(function () {
+                $("#alert-danger3").hide();
+                $("#alert-success3").show();
+                check[3] = 1;
+                for (var i = 0; i < 4; i++) {
+                    if (check[i] == 1) {
+                        count++;
+                    }
+                    if (count == 3) {
+                        $("#submit").removeAttr("disabled");
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

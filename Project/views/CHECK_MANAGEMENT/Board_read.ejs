@@ -1,0 +1,61 @@
+<style>
+    .board{
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+    .textarea{
+        width: 690px;
+        height: 300px;
+    }
+    #textarea{
+        -moz-appearance: textfield-multiline;
+        -webkit-appearance: textarea;
+        border: 1px solid gray;
+        font: medium;
+        font: -webkit-small-contorl;
+        text-align: left;
+        height: 300px;
+        overflow: auto;
+        padding: 2px;
+        resize: both;
+        width: 690px;
+    }
+</style>
+
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">공지사항</span>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px">
+    <div class="row" >
+        <div class="col-lg-12">
+            <div class="row">
+                <a style="color: #40c463; font-size: large; margin-left: 15em;">제목 : </a>
+                <div class="col-lg-5">
+                    <input type="text" name="research" class="form-control" id="research" placeholder="" readonly="readonly" value='<%= rv[0].Title %>'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board" style="margin-top: 1em; margin-left: 15em;">
+        <div class="row">
+            <input type="textarea" value='<%= rv[0].Content %>' readonly="readonly" style="width:685; height:500">
+        </div>
+    </div>
+    <div style="width: 690px;height: 35px; border: 1px solid gray; margin-top: 0.1em; margin-left: 14em;">
+        <a style="font-size: medium; color: #40c463;">파일:</a>
+        <a>여기에 링크 표시</a>
+    </div>
+    <div class="col-lg-12">
+        <button class="btn btn-success" id="" style="float: right; margin-top: 1em; margin-right: 13em;">돌아가기</button>
+    </div>
+</div>
+
+
+<%include ../include/footer.ejs%>
+<%include ../include/header.ejs%>

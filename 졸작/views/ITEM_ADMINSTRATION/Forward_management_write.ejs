@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">출고 등록</span>
+    </div>
+</div>
+
+<form action="http://127.0.0.1:3000/forward_management/write" accept-charset="utf-8" name="write" method="post"
+      style="margin-top: 20px; padding: 50px;">
+    <div class="form-group" style="padding-left: 100px; padding-right: 100px;  height: 570px">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">상품관리</a></li>
+            <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">출고 등록</a></li>
+        </ul>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <p style="width: 120px" class="input-group-text mx-auto d-block">대분류</p>
+            </div>
+            <select class="form-control" name="large_category" style="width: 130px" id="sel1">
+                <option>과일</option>
+                <option>채소</option>
+                <option>기타</option>
+            </select>
+            <div class="input-group-prepend">
+                <p style="width: 120px" class="input-group-text mx-auto d-block">소분류</p>
+            </div>
+            <select class="form-control" name="small_category" style="width: 130px" id="sel2">
+                <option>국내과일</option>
+                <option>외국과일</option>
+                <option>기타</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <p style="width: 120px" class="input-group-text mx-auto d-block">품목 이름</p>
+            </div>
+            <input type="text" name="name" style="width: 130px" class="form-control" placeholder="">
+            <div class="input-group-prepend">
+                <p style="width: 120px" class="input-group-text mx-auto d-block">고유번호</p>
+            </div>
+            <input type="text" name="unique_number" style="width: 130px" class="form-control" placeholder="">
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input style="width: 62px" name="radio_b" type="radio" value="BOX">BOX
+                </div>
+            </div>
+            <input type="text" name="quantity1" style="width: 130px" class="form-control" placeholder="">
+
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input style="width: 72px" name="radio_b" type="radio" value="KG">KG
+                </div>
+            </div>
+            <input type="text" name="quantity2" style="width: 130px" class="form-control" placeholder="">
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <p style="width: 120px" class="input-group-text mx-auto d-block">출고날짜</p>
+            </div>
+            <input type="date" name="forwarding_date" style="width: 130px" max="3000-12-31" min="1000-01-01"
+                   class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success mx-auto d-block" style="margin-top: 5px">등록</button>
+    </div>
+</form>
+
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

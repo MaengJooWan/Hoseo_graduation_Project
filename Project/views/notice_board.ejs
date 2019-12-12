@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href='http://127.0.0.1:3000/nodeModule/@fullcalendar/core/main.css' rel='stylesheet'/>
+<link href='http://127.0.0.1:3000/nodeModule/chart.js/dist/Chart.css' rel='stylesheet'/>
+<link href='http://127.0.0.1:3000/nodeModule/@fullcalendar/daygrid/main.css' rel='stylesheet'/>
+<link rel="stylesheet" href="http://127.0.0.1:3000/nodeModule/swiper/dist/css/swiper.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<script src='http://127.0.0.1:3000/nodeModule/chart.js/dist/Chart.js'></script>
+<script src='http://127.0.0.1:3000/nodeModule/@fullcalendar/core/main.js'></script>
+<script src='http://127.0.0.1:3000/nodeModule/@fullcalendar/daygrid/main.js'></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+
+<style>
+    .menu{
+        margin-top: 5em;
+        text-indent: 2em;
+    }
+    .bt{
+        margin-top: 4em;
+        float: right;
+        margin-inline-end: 27em;
+        text-indent: 2em;
+    }
+    .menuend{
+        margin-top: 2em;
+        text-indent: 2em;
+        margin-bottom: 20em;
+    }
+    .btend{
+        margin-top: 4em;
+        float: right;
+        margin-inline-end: 27em;
+        text-indent: 2em;
+        margin-bottom: 20em;
+    }
+</style>
+<!doctype html>
+<html lang="en">
+    <div class="menu">
+    <div class="row">
+            <table class="table table-hover">
+                <thead>
+                        <th>번호</th>
+                        <th>물품명</th>
+                        <th>날짜</th>
+                        <th>담당자</th>
+                        <th>가격(개당)</th>
+                        <th>가격(총))</th>
+                </thead>
+                <tbody>
+                <script>
+                        var num =0;
+                        var name, date, manager, price, allprice = "defualt";
+                        status[5]={name,date,manager,price,allprice};
+                        for(var i=0;i<5;i++){
+                            num+=1;
+                            document.write('<tr>');
+                            document.write('<td>');
+                            document.write((num));
+                            document.write('</td>');
+                            for(var j=0;j<5;j++){
+                                document.write('<td>');
+                                document.write((status[j]));
+                                document.write('</td>');
+                            }
+                        }
+                        document.write('</tr>');
+                </script>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

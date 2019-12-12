@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left"><%= order_d[0].name %></span>
+    </div>
+</div>
+
+<div class="form-group" style="padding:240px; margin-top: 20px;">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">상품관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#">입고 관리</a></li>
+        <li class="breadcrumb-item"><a style=" color: #34a853;" href="#"><%= order_d[0].name %></a></li>
+    </ul>
+    <div class="form-group">
+        <img src="http://127.0.0.1:3000/upload/<%= order_d[0].img_name %>" style="margin: 15px" id='img1'
+             class="mx-auto d-block">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">품목이름</p>
+        </div>
+        <input type="text" style="width: 130px" id="name" class="form-control" placeholder="" readonly
+               value="<%= order_d[0].name %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">수량</p>
+        </div>
+        <input type="text" style="width: 130px" id="quantity" class="form-control" placeholder="" readonly
+               value="<%= order_d[0].quantity %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">회사</p>
+        </div>
+        <input type="text" style="width: 130px" id="company" class="form-control" placeholder="" readonly
+               value="<%= order_d[0].company %>">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">등록자</p>
+        </div>
+        <input type="text" style="width: 130px" id="inspector" class="form-control" placeholder="" readonly
+               value="<%= order_d[0].inspector %>">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">비고</p>
+        </div>
+        <textarea class="form-control" id="explanation" rows="10" id="explanation" readonly
+                  name="explanation"><%= order_d[0].explanation %></textarea>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <p style="width: 120px" class="input-group-text mx-auto d-block">문서파일</p>
+        </div>
+        <a href="http://127.0.0.1:3000/upload1/<%= order_d[0].file_name %>" style="width: 130px" class="form-control"
+           readonly><%= order_d[0].file_name %></a>
+    </div>
+    <% if(order_d[0].approver == ''){ %>
+        <button type="button" class="btn btn-success" id="button" style="width: 100%; margin-top: 10px">발주승인</button>
+    <% } %>
+</div>
+
+<div class="container-fluid"
+     style="float : left; background-color: #eee; margin-top: 10px;text-align: center; padding: 40px 30px">
+    <h1>footer</h1>
+</div>
+<!--밑에는 풋터레이아웃-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:3000/nodeModule/swiper/dist/js/swiper.min.js"></script>
+<script>
+
+    function post_to_url(path, params, method) {
+        method = method || "post";
+
+        var form = document.createElement("form");
+
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+
+        form.submit();
+
+        return false;
+    }
+
+    $("#button").click(function () {
+        alert($("#span_name").html());
+        alert($("#name").val());
+        post_to_url('http://127.0.0.1:3000/order_stanby/write', {
+            'name': $("#name").val(),
+            'quantity': $("#quantity").val(),
+            'company': $("#company").val(),
+            'inspector': $("#inspector").val(),
+            'explanation': $("#explanation").html(),
+            'approver': $("#span_name").html()
+        });
+    });
+
+</script>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

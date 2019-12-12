@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<div class="swiper-container" style="padding-top: 55px;">
+    <span class="mx-auto d-block"
+          style="color: #34a853; text-align: center; font-size: 25px; margin-top: 5px">추천 제품</span>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="http://127.0.0.1:3000/static/images/apple.png" width="20%">
+            <span style="color: #34a853; margin-left: 50px">제품: 사과<br><br>수요 예상: 300 Box<br><br>거래처: 민수과수원</span>
+        </div>
+        <div class="swiper-slide">
+            <img src="http://127.0.0.1:3000/static/images/bananas.png" width="20%">
+            <span style="color: #34a853; margin-left: 50px">제품: 바나나<br><br>수요 예상: 100 Box<br><br>거래처: Chu Fruit Farm</span>
+        </div>
+        <div class="swiper-slide">
+            <img src="http://127.0.0.1:3000/static/images/grapes.png" width="20%">
+            <span style="color: #34a853; margin-left: 50px">제품: 포도<br><br>수요 예상: 20 Box<br><br>거래처: 지수과수원</span>
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<button type="button" class="btn btn-success btn-block" disabled style="margin-top: 10px; color: white"><span
+            class="spinner-grow spinner-grow-sm"></span> 공지사항 && 달력
+</button>
+
+<div class="row">
+    <div class="col-sm-6" style="background-color: white; padding: 40px">
+        <h2>공지사항</h2>
+        <table class="table table-hover mx-auto">
+            <thead>
+            <tr>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>날짜</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i < notice_data.length; i++){ %>
+                <tr>
+                    <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><%= notice_data[i].TITLE %></td>
+                    <td style=" width:50%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><%= notice_data[i].CONTENT %></td>
+                    <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><%= notice_data[i].WRITER %></td>
+                    <td style=" width:20%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><%= notice_data[i].DATE %></td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-6" style="padding: 40px; background-color: white;">
+        <div id="calendar">
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-success btn-block" disabled style="margin-top: 10px; color: white"><span
+            class="spinner-grow spinner-grow-sm"></span>과일 재고 현황
+</button>
+
+<canvas id="myChart" name="myChart" style="background-color: white" height="250px"></canvas>
+
+<button type="button" class="btn btn-success btn-block" disabled style="margin-top: 10px; color: white"><span
+            class="spinner-grow spinner-grow-sm"></span>실시간 입/출고량
+</button>
+<div class="col-sm-12" style="float: left; margin-top: 10px; margin-bottom: 10px; text-align: center; color: black">
+    <div id="card_1" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <div class="card-header" style="background-color: #a8e4b8">사과 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/apple.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="o_in" style="color: black"><br></span>
+            <span id="o_out" style="color: black"></span>
+        </div>
+    </div>
+    <div id="card_2" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <div class="card-header" style="background-color: #a8e4b8">바나나 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/bananas.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="t_in" style="color: black"><br></span>
+            <span id="t_out" style="color: black"></span></div>
+    </div>
+    <div id="card_3" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <div class="card-header" style="background-color: #a8e4b8">포도 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/grapes.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="th_in" style="color: black"><br></span>
+            <span id="th_out" style="color: black"></span></div>
+    </div>
+    <div id="card_4" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px;">
+        <div class="card-header" style="background-color: #a8e4b8">오렌지 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/orange.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="fo_in" style="color: black"><br></span>
+            <span id="fo_out" style="color: black"></span></div>
+    </div>
+    <div id="card_4" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px;">
+        <div class="card-header" style="background-color: #a8e4b8">딸기 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/strawberry.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="fi_in" style="color: black"><br></span>
+            <span id="fi_out" style="color: black"></span></div>
+    </div>
+    <div id="card_2" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <div class="card-header" style="background-color: #a8e4b8">바나나 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/bananas.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="si_in" style="color: black"><br></span>
+            <span id="si_out" style="color: black"></span></div>
+    </div>
+    <div id="card_3" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px; ">
+        <div class="card-header" style="background-color: #a8e4b8">포도 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/grapes.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="se_in" style="color: black"><br></span>
+            <span id="se_out" style="color: black"></span></div>
+    </div>
+    <div id="card_4" class="card"
+         style="width:300px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 90px; margin-right: 65px;">
+        <div class="card-header" style="background-color: #a8e4b8">오렌지 <span class="badge badge-success">Update</span>
+        </div>
+        <div class="card-body"><img class="card-img-top" src="http://127.0.0.1:3000/static/images/orange.png"
+                                    alt="Card image" height="200px" style="padding: 5px"></div>
+        <div class="card-footer" style="background-color: #a8e4b8">
+            <span id="ei_in" style="color: black"><br></span>
+            <span id="ei_out"style="color: black"></span></div>
+    </div>
+
+</div>
+
+<script>
+    var fritus;
+
+    var timer = setInterval(function () {
+        $.ajax({
+            url: '/mysql_get',
+            type: 'POST',
+            success: function (result) {
+                $('#o_in').html('입고: ' + result[0].quantity_plus)
+                $('#o_out').html('출고: ' + result[0].quantity_minus)
+
+                $('#t_in').html('입고: ' + result[1].quantity_plus)
+                $('#t_out').html('출고: ' + result[1].quantity_minus)
+
+                $('#th_in').html('입고: ' + result[2].quantity_plus)
+                $('#th_out').html('출고: ' + result[2].quantity_minus)
+
+                $('#fo_in').html('입고: ' + result[3].quantity_plus)
+                $('#fo_out').html('출고: ' + result[3].quantity_minus)
+
+                $('#fi_in').html('입고: ' + result[4].quantity_plus)
+                $('#fi_out').html('출고: ' + result[4].quantity_minus)
+
+                $('#si_in').html('입고: ' + result[5].quantity_plus)
+                $('#si_out').html('출고: ' + result[5].quantity_minus)
+
+                $('#se_in').html('입고: ' + result[6].quantity_plus)
+                $('#se_out').html('출고: ' + result[6].quantity_minus)
+
+                $('#ei_in').html('입고: ' + result[7].quantity_plus)
+                $('#ei_out').html('출고: ' + result[7].quantity_minus)
+            },
+        });
+
+    }, 10000);
+
+    $(window).load(function () {
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['감귤', '사과', '배', '수박', '참외', '딸기', '포도'],
+                datasets: [{
+                    label: '수량',
+                    data: fritus,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $.ajax({
+            url: '/mysql_get',
+            type: 'POST',
+            success: function (result) {
+                fritus = [result[0].quantity, result[1].quantity, result[2].quantity, result[3].quantity, result[4].quantity, result[5].quantity, result[6].quantity];
+                $('#o_in').html('입고: ' + result[0].quantity_plus)
+                $('#o_out').html('출고: ' + result[0].quantity_minus)
+
+                $('#t_in').html('입고: ' + result[1].quantity_plus)
+                $('#t_out').html('출고: ' + result[1].quantity_minus)
+
+                $('#th_in').html('입고: ' + result[2].quantity_plus)
+                $('#th_out').html('출고: ' + result[2].quantity_minus)
+
+                $('#fo_in').html('입고: ' + result[3].quantity_plus)
+                $('#fo_out').html('출고: ' + result[3].quantity_minus)
+
+                $('#fi_in').html('입고: ' + result[4].quantity_plus)
+                $('#fi_out').html('출고: ' + result[4].quantity_minus)
+
+                $('#si_in').html('입고: ' + result[5].quantity_plus)
+                $('#si_out').html('출고: ' + result[5].quantity_minus)
+
+                $('#se_in').html('입고: ' + result[6].quantity_plus)
+                $('#se_out').html('출고: ' + result[6].quantity_minus)
+
+                $('#ei_in').html('입고: ' + result[7].quantity_plus)
+                $('#ei_out').html('출고: ' + result[7].quantity_minus)
+            },
+        });
+    });
+
+    $(document).ready(function () {
+    });
+
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['dayGrid']
+        });
+
+        calendar.render();
+    });
+
+</script>
+</div>
+</body>
+</html>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>

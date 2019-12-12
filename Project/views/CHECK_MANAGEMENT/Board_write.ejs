@@ -1,0 +1,306 @@
+<style>
+    .body{
+        margin-left: 15em;
+    }
+    .btn_button{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        color:#ffffff;
+        background-color: #40c463;
+        padding: 0;
+        border: none;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .btn_button_white{
+        width: 30px;
+        height: 25px;
+        margin-top: 0.25em;
+        background-color: #ffffff;
+        padding: 0;
+        border: 1px solid gray;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    .box{
+        width: 690px;
+        height: 35px;
+        margin-left: 15em;
+        text-align: center;
+        background-color: #ffffff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .textarea{
+        width: 690px;
+        height: 300px;
+    }
+    #textarea{
+        -moz-appearance: textfield-multiline;
+        -webkit-appearance: textarea;
+        border: 1px solid gray;
+        font: medium;
+        font: -webkit-small-contorl;
+        text-align: left;
+        height: 300px;
+        overflow: auto;
+        padding: 2px;
+        resize: both;
+        width: 690px;
+    }
+</style>
+<!doctype html>
+<html lang="en">
+    <div class="card" style="padding-top: 54px; color: white">
+        <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+            <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+            <span class="mx-auto d-block" style="float: left">공지사항 글쓰기</span>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 20px">
+        <div class="col-sm-12 mx-auto d-block" style="float: left; margin: 10px">
+        <div class="row">
+            <div class="col-sm-12 body">
+                <div class="row">
+                <label for="textTitle" style="font-size: 25px; color: #40c463;">제목</label>
+                <div class="col-sm-6">
+                    <input type="text" name="textTitle" style="font-size: 15px;" class="form-control" id="textTitle" placeholder=""><!--id 안 넣어뒀음-->
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" style="margin-top: 1em;">
+                <div class="row">
+                    <a for="textEdit" style="color: #40c463; margin-top: 0.3em; margin-left: 1.5em; margin-right: 0.5em;">글자크기 : </a>
+                    <div>
+                        <input id="fontSize" type="text" onkeypress=only_Number() style="margin-left: 0.3em; float: left; width: 30px; margin-top: 0.2em;"></input>
+                        <button class="btn_button" style="float: left; margin-left: 0.2em;" type="submit" onclick=fontstyle_change_size()><span style="color: white">적용</span></button> 
+                    </div>
+                    <a for="textEdit" style="color: #40c463; margin-top: 0.3em; margin-right: 0.3em; margin-left: 1em;">서식 : </a>
+                    <div>
+                        <input type="button" class="btn_button" onclick=fontstyle_change_Originally() value="A" style="font-style: normal;">
+                        <input type="button" class="btn_button" onclick=fontstyle_change_Bold() value="A" style="font-weight: bold;">
+                        <input type="button" class="btn_button" onclick=fontstyle_change_Italic() value="A" style="font-style: italic;">
+                    </div>
+                    <a for="textEdit" style="color: #40c463; margin-top: 0.3em; margin-right: 0.3em; margin-left: 1em;">색상 : </a>
+                    <div>
+                        <input type="button" class="btn_button_white" onclick=fontstyle_change_color_Red() value="■" style="color: red;">
+                        <input type="button" class="btn_button_white" onclick=fontstyle_change_color_Blue() value="■" style="color:blue">
+                        <input type="button" class="btn_button_white" onclick=fontstyle_change_color_Green() value="■" style="color: green;">
+                        <input type="button" class="btn_button_white" onclick=fontstyle_change_color_Yellow() value="■" style="color: yellow;">
+                        <input type="button" class="btn_button_white" onclick=fontstyle_change_color_Black() value="■" style="color: black;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="body" style="margin-top: 1em;">
+                <input type="textarea" id="content" name="content" style="width:685; height:500; white-space:pre;">
+            </div>
+        </div>
+        <div class="row">
+            <div style="width: 690px;height: 35px; border: 1px solid gray; margin-top: 0.1em; margin-left: 15em;">
+                <input type="file" id="file" style="float: left; width: 300px; margin-top: 0.1em;" accept=".hwp,.doc,.pdf" onchange="file_read()">
+                <input type="button" id="" style="float: right; margin-top: 0.1em;" value="업로드">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success" style="float: right; margin-right: 12em; margin-top : 1em;" type="button" onclick="note_write()"><span style="color: white">저장</span></a></button>
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+
+
+    function only_Number(){
+        if(event.keyCode<48||event.keyCode>57){
+            event.returnValue=false;
+        }
+    }
+    //시작지점은 찾아보니까 focus가 있긴한데
+    //이건 그 선택지점의 끝과 시작을 지정하는 것이라 애매해서 안적음
+    //저기 sel=window.getselection이 드래그 선택지점 가져오는 거고
+    //range가 해당 선택지점의 값을 가져오는 것.
+    //안된다면 그냥 서식없이 저장해버리도록 하세요.
+    //나도 몰라아아아아아
+    function fontstyle_change_size(){
+        var fontsize=document.getElementById("fontSize");
+        var temp = document.createElement("temp");
+        temp.style.fontSize=fontsize.value;
+        
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+        
+    }
+    function fontstyle_change_Bold(){
+        var temp = document.createElement("temp");
+        temp.style.fontWeight="bold";
+        
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+        
+    }
+    function fontstyle_change_Italic(){
+        var temp = document.createElement("temp");
+        temp.style.fontStyle="italic"
+        
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+        
+    }
+    function fontstyle_change_Originally(){
+        var temp = document.createElement("temp");
+        temp.style.fontStyle="normal"
+        temp.style.fontWeight="400"
+        
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    function fontstyle_change_color_Red(){
+        var temp = document.createElement("temp");
+        temp.style.color="red";
+ 
+
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    function fontstyle_change_color_Blue(){
+        var temp = document.createElement("temp");
+        temp.style.color="blue";
+ 
+
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    function fontstyle_change_color_Green(){
+        var temp = document.createElement("temp");
+        temp.style.color="green";
+ 
+
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    function fontstyle_change_color_Yellow(){
+        var temp = document.createElement("temp");
+        temp.style.color="yellow";
+ 
+
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    function fontstyle_change_color_Black(){
+        var temp = document.createElement("temp");
+        temp.style.color="black";
+ 
+
+        if(window.getSelection()){
+            var sel=window.getSelection();
+            if(sel.rangeCount){
+                var range=sel.getRangeAt(0).cloneRange();
+                range.surroundContents(temp);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    }
+    //데이터 읽어오는 부분
+    function file_read(){
+        var file = document.getElementById('file');
+        var reader= new FileReader();
+        reader.readAsDataURL(file.files[0]);
+    }
+
+    function note_write(){
+        //검색
+        var Title = $('#textTitle').val();
+        var Content = $('#content').val();
+        alert("접근");
+
+
+        if(Title == "" || Content == ""){
+            alert('내용을 채워주세요.');
+            return false;
+        }else{
+            $.ajax({
+                url: '/board_write/write',
+                async: true,
+                type: 'POST',
+                data: {
+                    Title: Title,
+                    Content: Content,
+                },
+                dataType: 'json',
+                success: function(data){
+                    var temp = (data['ok']);
+
+                    if(temp == 1){
+                        alert("글쓰기 완료");
+                        window.location.href='/board';
+                    }
+                }
+            })
+        }
+    }
+</script>
+<%include ../include/footer.ejs%>
+<%include ../include/header.ejs%>

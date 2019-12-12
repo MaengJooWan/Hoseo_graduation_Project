@@ -1,0 +1,45 @@
+<div class="card" style="padding-top: 60px; color: white">
+    <div class="card-header mx-auto d-block" style="background: #40c463; font-size: 30px; width: 100%;">
+        <span class="spinner-grow spinner-grow mx-auto d-block" style="float: left"></span>
+        <span class="mx-auto d-block" style="float: left">회원정보 변경</span>
+    </div>
+    
+    <div class="card" style="width:660px; height: 200px; float: left; margin-top : 10px; margin-bottom: 10px; margin-left: 345px;">
+        <div class="row" style="width:660px; height: 35px;margin-left: 130px; margin-top:75px">
+            <a style="color: #40c463; font-size: large;margin-right: 0.3em;margin-top: 0.2em;">비밀번호:</a>
+            <input type="password" id="PW" name="PW" style="margin-right: 0.3em;width: 250px;">
+            <button type="button" class="btn btn-success" onclick="result()"><span style="color: white">확인</span></a></button>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function result(){
+        var pw = $('#PW').val();
+
+        $.ajax({
+            url: '/auth/userpwcheck',
+            async: true,
+            type: 'POST',
+            data: {
+                pw: pw
+            },
+            dataType: 'json',
+            success: function(data) {
+                //alert(data['ok']);
+
+                if(data['ok'] == 0){
+                    window.location.href='/user_chage_update';
+                }else{
+                    alert("PW를 다시 확인해주세요.");
+                }
+            }
+        })
+    }
+
+</script>
+
+<%include include/footer.ejs%>
+<%include include/header.ejs%>
